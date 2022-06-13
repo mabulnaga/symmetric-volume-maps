@@ -6,7 +6,7 @@ An algorithm for finding dense correspondences between volumes represented as te
 
 ### Requirements
 - MATLAB
-- MATLAB Packages:
+- MATLAB Package:
     - [geometry processing toolbox](https://github.com/alecjacobson/gptoolbox)
 - [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html) for fast 3x3 SVD computation
 - (Optional) GPU with CUDA compute capability
