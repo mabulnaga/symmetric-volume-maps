@@ -1,22 +1,34 @@
 # Symmetric Volume Maps
 
-An algorithm for finding dense correspondences between volumes represented as tetrahedral meshes. 
+An algorithm for finding dense correspondences between volumes represented as tetrahedral meshes. This method can map between volumes that are close or far from isometries, and is flexible to handle landmark-based, boundary surface map, or volumetric map initializations. There is also an interactive tool for manually selecting landmarks.
 
 ![alt text](https://github.com/mabulnaga/symmetric-volume-maps/blob/main/symmetric-volume-map-teaser.png)
 
-### Requirements
+## Requirements
 - MATLAB
 - MATLAB Package:
     - [geometry processing toolbox](https://github.com/alecjacobson/gptoolbox)
-- [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html) for fast 3x3 SVD computation
+- Fast 3x3 SVD Computation:
+    - Linux and Windows: [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html) for fast 3x3 SVD computation
+    - Mac: [ARFF](https://github.com/dpa1mer/arff) toolbox for fast 3x3 SVD computation
 - (Optional) GPU with CUDA compute capability
 
-### Installation
-To install the fast 3x3 SVD mex code, modify "SVD/call_mex_Eigen.m" and point to your installation of Eigen. Note that we've encountered issues with this library in Mac. If that applies to you, instead install the MATLAB package [ARFF](https://github.com/dpa1mer/arff), and compile "batchop_cpu". There is a check for Mac OS in the appropriate file, "helpers/compute_signed_SVD_batch.m". You may modify this file if wanting to use batchop instead of Eigen.
+## Organization
+- The main mapping algorithm is `symmetric_volume_map.m`. We have include three demos demonstrating how to run the code with different initializations.
+- The `SVD` folder contains C++ code for fast 3x3 SVD computation taken from the [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html) library.
+- The `GPU_projection` folder contains CUDA code for tetrahedron projection used for faster convergence. The code is adopted from the code base of [Li et al. "Interactive All-Hex Meshing via Cuboid Decomposition" (2021)](https://github.com/lingxiaoli94/interactive-hex-meshing/blob/main/README.md)
+- The `helpers`, `utils` and `energy` folders contain MATLAB code used in the algorithm.
+- The `data` folder contains examples of volumetric meshes as `.VTK` files, manually marked landmarks, `landmarks.mat`, and initialized maps using ["Reversible Harmonic Maps between Discrete Surfaces" by Ezuz et al. (2019)](https://arxiv.org/abs/1801.02453).
 
-If using a GPU, mex build the mexcuda file in "GPU_projection/mex_build.m". You will need to modify this file to point to your CUDA library.
+## Installation
+- SVD mex code:
+    - (Linux and Windows): modify the path to your installation of Eigen in `SVD/call_mex_Eigen.m` and run ```cd SVD; call_mex_Eigen.m``` 
+    - (Mac): Install `batchop_cpu` in ARFF: ```cd src/batchop; mexbuild /path/to/tbb/include```
+    - If you encounter issues with Eigen, you may use `batchop_cpu` on a Windows or Linux machine. Simply modify line 15 of `helpers/compute_signed_SVD_batch.m`
+- gptoolbox: install with Cmake, following these [instructions](https://github.com/alecjacobson/gptoolbox/blob/master/mex/README.md).
+- GPU projection (optional): modify the path to point to your CUDA installation in `GPU_projection/mex_build.m` and run ```cd GPU_projection; mex_build.m```
 
-### Usage
+## Usage
 Our method can compute maps when initialized by either a coarse set of landmarks, or a surface or volume map. We require pairs of tetrahedral meshes in .VTK format. 
 
 There are three demos provided to get started:
@@ -26,10 +38,10 @@ There are three demos provided to get started:
 
 We are currently working on a demo to convert a surface map initialization to a volume map.
 
-### Development
+## Development
 Please contact Mazdak Abulnaga, abulnaga@mit.edu.
 
-### Citing and Paper
+## Citing and Paper
 If you use this method or some parts of the code, please consider citing our paper: [eprint arXiV:2202.02568](https://arxiv.org/abs/2202.02568)
 ```
 @article{abulnaga2022symmetric,
