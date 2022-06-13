@@ -16,9 +16,9 @@ An algorithm for finding dense correspondences between volumes represented as te
 ## Organization
 - The main mapping algorithm is `symmetric_volume_map.m`. We have include three demos demonstrating how to run the code with different initializations.
 - The `SVD` folder contains C++ code for fast 3x3 SVD computation taken from the [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html) library.
-- The `GPU_projection` folder contains CUDA code for tetrahedron projection used for faster convergence. The code is adopted from the code base of [Li et al. "Interactive All-Hex Meshing via Cuboid Decomposition" (2021)](https://github.com/lingxiaoli94/interactive-hex-meshing/blob/main/README.md)
+- The `GPU_projection` folder contains CUDA code for tetrahedron projection used for faster convergence. The code is adopted from the code base of Li et al., ["Interactive All-Hex Meshing via Cuboid Decomposition" (2021)](https://github.com/lingxiaoli94/interactive-hex-meshing/blob/main/README.md).
 - The `helpers`, `utils` and `energy` folders contain MATLAB code used in the algorithm.
-- The `data` folder contains examples of volumetric meshes as `.VTK` files, manually marked landmarks, `landmarks.mat`, and initialized maps using ["Reversible Harmonic Maps between Discrete Surfaces" by Ezuz et al. (2019)](https://arxiv.org/abs/1801.02453).
+- The `data` folder contains examples of volumetric meshes as `.VTK` files, manually marked landmarks, `landmarks.mat`, and initialized maps using ["Reversible Harmonic Maps between Discrete Surfaces"](https://arxiv.org/abs/1801.02453) by Ezuz et al. (2019). Tetrahedral meshes were generating using ["Fast Tetrahedral Meshing in the Wild"](https://arxiv.org/abs/1908.03581) by Hu et al. (2020); [(code)](https://github.com/wildmeshing/fTetWild).
 
 ## Installation
 - SVD mex code:
