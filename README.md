@@ -1,6 +1,6 @@
 # Symmetric Volume Maps
 
-An algorithm for finding dense correspondences between volumes represented as tetrahedral meshes. This method can map between volumes that are close or far from isometries, and is flexible to handle landmark-based, boundary surface map, or volumetric map initializations. There is also an interactive tool for manually selecting landmarks.
+An algorithm for finding dense correspondences between volumes represented as tetrahedral meshes. This method can map between volumes that are close or far from isometries, and is flexible to handle landmark-based, boundary surface map, or volumetric map initializations. There is also an interactive tool for manually selecting landmarks. This code is based on the paper "Symmetric Volume Maps" by S. Mazdak Abulnaga, Oded Stein, Polina Golland, and Justin Solomon, [eprint arXiV:2202.02568](https://arxiv.org/abs/2202.02568).
 
 ![alt text](https://github.com/mabulnaga/symmetric-volume-maps/blob/main/symmetric-volume-map-teaser.png)
 
