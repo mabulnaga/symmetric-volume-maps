@@ -17,7 +17,7 @@ To install the fast 3x3 SVD mex code, modify "SVD/call_mex_Eigen.m" and point to
 If using a GPU, mex build the mexcuda file in "GPU_projection/mex_build.m". You will need to modify this file to point to your CUDA library.
 
 ### Usage
-Our method can compute maps when initialized by either a coarse set of landmarks, or a surface or volume map.
+Our method can compute maps when initialized by either a coarse set of landmarks, or a surface or volume map. We require pairs of tetrahedral meshes in .VTK format. 
 
 There are three demos provided to get started:
 - demo_initialized_volume_map.m: Mapping when provided with an initial volumetric map;
