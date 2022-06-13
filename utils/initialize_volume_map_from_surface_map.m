@@ -1,0 +1,52 @@
+function [P12_init, P21_init] = initialize_volume_map_from_surface_map(P12_init_surface, P21_init_surface, boundary_id_1, boundary_id_2)
+%INITIALIZE_VOLUME_MAP_FROM_SURFACE_MAP initializes a volume map when given
+%a surface map, taking into account vertex indexing.
+%   Detailed explanation goes here
+
+n_bd_1 = length(find(boundary_id_1));
+n_bd_2 = length(find(boundary_id_2));
+
+P12_full = sparse(length(Mesh1.verts),length(Mesh2.verts));
+P21_full = sparse(length(Mesh2.verts),length(Mesh1.verts));
+m1_map = zeros(1,n_bd_1 );
+m2_map = zeros(1,n_bd_2);
+
+for i = 1 : n_bd_1
+    id = find(Ts(:) == i);
+    m1_map(i) = Mesh1.boundary_faces(id(1));
+end
+for i = 1 : length(unique(Ts2))
+    id = find(Ts2(:) == i);
+    m2_map(i) = Mesh2.boundary_faces(id(2));
+end
+for i = 1 : size(P12_init_surface,1)
+    ids = find(P12_init_surface(i,:));
+    P12_full(m1_map(i),m2_map(ids)) = P12_init_surface(i,ids) ;
+end
+for i = 1 : size(P21_init_surface,1)
+    ids = find(P21_init_surface(i,:));
+    P21_full(m2_map(i),m1_map(ids)) = P21_init_surface(i,ids);
+end
+
+
+%% Now, get the proper landmarks and ordering
+%close all;
+%find for each vertex, their closest one on the boundary. Then, assign
+%the map value to that.
+
+X_1 = Mesh1.verts;
+X_2 = Mesh2.verts;
+P12_init = sparse(size(P12_full,1),size(P12_full,2));
+P21_init = sparse(size(P21_full,1),size(P21_full,2));
+
+
+[~,Xt1] = freeBoundary(triangulation(Mesh1.tets,Mesh1.verts));
+[~,Xt2] = freeBoundary(triangulation(Mesh2.tets, Mesh2.verts));
+v = knnsearch(Xt1,X_1);
+v = m1_map(v);
+v2 = knnsearch(Xt2,X_2);
+v2 = m2_map(v2);
+P12_init(1:end,:) = P12_full(v,:);
+P21_init(1:end,:) = P21_full(v2,:);
+end
+
