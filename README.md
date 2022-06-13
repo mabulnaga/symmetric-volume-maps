@@ -1,4 +1,4 @@
-# Symmetric-Volume-Maps
+# Symmetric Volume Maps
 
 An algorithm for finding dense correspondences between volumes represented as tetrahedral meshes. 
 
