@@ -23,7 +23,7 @@ An algorithm for finding dense correspondences between volumes represented as te
 ## Installation
 - SVD mex code:
     - (Linux and Windows): modify the path to your installation of Eigen in `SVD/call_mex_Eigen.m` and run ```cd SVD; call_mex_Eigen.m``` 
-    - (Mac): Install `batchop_cpu` in ARFF: ```cd src/batchop; mexbuild /path/to/tbb/include```
+    - (Mac): Build `batchop_cpu` in ARFF: ```cd src/batchop; mexbuild /path/to/tbb/include```
     - If you encounter issues with Eigen, you may use `batchop_cpu` on a Windows or Linux machine. Simply modify line 15 of `helpers/compute_signed_SVD_batch.m`
 - gptoolbox: install with Cmake, following these [instructions](https://github.com/alecjacobson/gptoolbox/blob/master/mex/README.md).
 - GPU projection (optional): modify the path to point to your CUDA installation in `GPU_projection/mex_build.m` and run ```cd GPU_projection; mex_build.m```
