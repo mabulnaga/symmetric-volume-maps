@@ -14,13 +14,13 @@ An algorithm for finding dense correspondences between volumes represented as te
 ### Installation
 To install the fast 3x3 SVD mex code, modify "SVD/call_mex_Eigen.m" and point to your installation of Eigen. Note that we've encountered issues with this library in Mac. If that applies to you, instead install the MATLAB package [ARFF](https://github.com/dpa1mer/arff), and compile "batchop_cpu". There is a check for Mac OS in the appropriate file, "helpers/compute_signed_SVD_batch.m". You may modify this file if wanting to use batchop instead of Eigen.
 
-If using a GPU, mexbuild the mexcuda file in "GPU_projection/mexbuild.m". You will need to modify this file to point to your CUDA library.
+If using a GPU, mex build the mexcuda file in "GPU_projection/mex_build.m". You will need to modify this file to point to your CUDA library.
 
 ### Usage
 Our method can compute maps when initialized by either a coarse set of landmarks, or a surface or volume map.
 
 There are three demos provided to get started:
-- demo_initialized_volume_map.m: A demo when already provided with an initial volumetric map;
+- demo_initialized_volume_map.m: Mapping when provided with an initial volumetric map;
 - demo_landmark.m: Mapping with only a landmark-based initialization; and
 - demo_interactive_landmark.m: Using our interactive tool to manually select landmarks.
 
