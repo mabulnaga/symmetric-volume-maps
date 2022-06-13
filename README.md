@@ -1,6 +1,6 @@
 # Symmetric-Volume-Maps
 
-An algorithm for finding correspondences between volumes represented as tetrahedral meshes. 
+An algorithm for finding dense correspondences between volumes represented as tetrahedral meshes. 
 
 ![alt text](https://github.com/mabulnaga/symmetric-volume-maps/blob/main/symmetric-volume-map-teaser.png)
 
@@ -17,7 +17,9 @@ To install the fast 3x3 SVD mex code, modify "SVD/call_mex_Eigen.m" and point to
 If using a GPU, mexbuild the mexcuda file in "GPU_projection/mexbuild.m". You will need to modify this file to point to your CUDA library.
 
 ### Usage
-There are three demos provided.
+Our method can compute maps when initialized by either a coarse set of landmarks, or a surface or volume map.
+
+There are three demos provided to get started:
 - demo_initialized_volume_map.m: A demo when already provided with an initial volumetric map;
 - demo_landmark.m: Mapping with only a landmark-based initialization; and
 - demo_interactive_landmark.m: Using our interactive tool to manually select landmarks.
