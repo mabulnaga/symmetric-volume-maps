@@ -2,7 +2,7 @@
 
 An algorithm for finding correspondences between volumes represented as tetrahedral meshes. 
 
-![alt text](https://github.com/mabulnaga/placenta-flattening/blob/master/flattening_flowchart.png)
+![alt text](https://github.com/mabulnaga/symmetric-volume-maps/blob/main/symmetric-volume-map-teaser.png)
 
 ### Requirements
 - MATLAB
