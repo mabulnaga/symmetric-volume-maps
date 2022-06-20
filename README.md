@@ -9,8 +9,8 @@ An algorithm for finding dense correspondences between volumes represented as te
 - MATLAB Package:
     - [geometry processing toolbox](https://github.com/alecjacobson/gptoolbox)
 - Fast 3x3 SVD Computation:
-    - Linux and Windows: [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html) for fast 3x3 SVD computation
-    - Mac: [ARFF](https://github.com/dpa1mer/arff) toolbox for fast 3x3 SVD computation
+    - Linux and Windows: [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html)
+    - Mac: [ARFF toolbox](https://github.com/dpa1mer/arff)
 - (Optional) GPU with CUDA compute capability
 
 ## Organization
