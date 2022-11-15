@@ -1,0 +1,6 @@
+- batchSVD3x3Eigen.cpp is retrieved from the Eigen C++ library, found: https://eigen.tuxfamily.org/index.php?title=Main_Page
+The software uses the Mozilla Public license, https://www.mozilla.org/en-US/MPL/2.0/
+
+-read_vtk.m is Copyright Mario Richtsfeld, distributed under the BSD license retrieved from: https://github.com/bonilhamusclab/MRIcroS/blob/master/%2BfileUtils/%2Bvtk/readVtk.m 
+License notice here: https://github.com/bonilhamusclab/MRIcroS/blob/master/license.txt
+BSD License: https://opensource.org/licenses/BSD-3-Clause 
