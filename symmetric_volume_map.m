@@ -190,7 +190,7 @@ for optimization_counter = count_start : max_optimization_count
                 tic
                 P_12old = P_12;
                 P_21old = P_21;
-                P_12 = optimize_P_ij_justin_approx(P_12, X_12, X_21, X_1, X_2, Mesh2.tets, [], [], alpha, c_1, c_2, beta);
+                P_12 = optimize_P_ij_approx(P_12, X_12, X_21, X_1, X_2, Mesh2.tets, [], [], alpha, c_1, c_2, beta);
                 if(fixBoundary) %lock the map on the boundary.
                     P_12(ignore_verts{1},:) = P_12old(ignore_verts{1},:);
                     P_21(ignore_verts{2},:) = P_21old(ignore_verts{2},:);
