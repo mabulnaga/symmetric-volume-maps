@@ -44,9 +44,12 @@ Please contact Mazdak Abulnaga, abulnaga@mit.edu.
 ## Citing and Paper
 If you use this method or some parts of the code, please consider citing our paper: [eprint arXiV:2202.02568](https://arxiv.org/abs/2202.02568)
 ```
-@article{abulnaga2022symmetric,
-    title={Symmetric Volume Maps},
+@article{abulnaga2023symmetric,
+    title = {Symmetric Volume Maps: Order-invariant Volumetric Mesh Correspondence with Free Boundary},
     author={Abulnaga, S Mazdak and Stein, Oded and Golland, Polina and Solomon, Justin},
-    journal={arXiv preprint arXiv:2202.02568},
-    year={2022}}
+    journal={ACM Trans. Graph.},
+    volume = {42},
+    number = {3},
+    articleno = {25},
+    year={2023}}
 ```
