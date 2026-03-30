@@ -1,6 +1,6 @@
 # Symmetric Volume Maps
 
-An algorithm for finding dense correspondences between volumes represented as tetrahedral meshes. This method can map between volumes that are close or far from isometries, and is flexible to handle landmark-based initializations, or initializations with a boundary surface map or volumetric map. There is also an interactive tool for manually selecting landmarks. This code is based on the paper "Symmetric Volume Maps" by S. Mazdak Abulnaga, Oded Stein, Polina Golland, and Justin Solomon, [eprint arXiV:2202.02568](https://arxiv.org/abs/2202.02568).
+An algorithm for finding dense correspondences between volumes represented as tetrahedral meshes. This method can map between volumes that are close or far from isometries, and is flexible to handle landmark-based initializations, or initializations with a boundary surface map or volumetric map. There is also an interactive tool for manually selecting landmarks. This code is based on the paper "Symmetric Volume Maps" by S. Mazdak Abulnaga, Oded Stein, Polina Golland, and Justin Solomon, [ACM Transactions on Graphics (2023)](https://dl.acm.org/doi/10.1145/3572897).
 
 ![alt text](https://github.com/mabulnaga/symmetric-volume-maps/blob/main/symmetric-volume-map-teaser.png)
 
@@ -42,7 +42,7 @@ We are currently working on a demo to convert a surface map initialization to a 
 Please contact Mazdak Abulnaga, abulnaga@mit.edu.
 
 ## Citing and Paper
-If you use this method or some parts of the code, please consider citing our paper: [eprint arXiV:2202.02568](https://arxiv.org/abs/2202.02568)
+If you use this method or some parts of the code, please consider citing our paper: [Symmetric Volume Maps: Order-invariant Volumetric Mesh Correspondence with Free Boundary ](https://dl.acm.org/doi/10.1145/3572897)
 ```
 @article{abulnaga2023symmetric,
     title = {Symmetric Volume Maps: Order-invariant Volumetric Mesh Correspondence with Free Boundary},
